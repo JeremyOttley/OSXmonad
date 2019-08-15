@@ -86,10 +86,11 @@ end)
 local tiling = require "hs.tiling"
 local hotkey = require "hs.hotkey"
 
+-- find a way to replace cycleLayout with "space" instead of "c"
 hotkey.bind(modkey, "space", function() tiling.cycleLayout() end)
---hotkey.bind(modkey, "j", function() tiling.cycle(1) end)
---hotkey.bind(modkey, "k", function() tiling.cycle(-1) end)
---hotkey.bind(modkey, "space", function() tiling.promote() end)
+hotkey.bind(modkey, "j", function() tiling.cycle(1) end)
+hotkey.bind(modkey, "k", function() tiling.cycle(-1) end)
+hotkey.bind(modkey, "space", function() tiling.promote() end)
 hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
 
 -- If you want to set the layouts that are enabled
@@ -106,3 +107,30 @@ hs.window.animationDuration = 0
 -- Remove window shadows
 hs.window.setShadows(true)
 
+--[[GRID]]--
+
+local grid = hs.grid
+
+grid.GRIDWIDTH  = 12
+grid.GRIDHEIGHT = 12
+grid.MARGINX    = 0
+grid.MARGINY    = 0
+
+--
+-- [[ Commands ]] --
+--
+
+hs.hotkey.bind(hyper, 'M', grid.maximizeWindow)
+
+hs.hotkey.bind(hyper, 'N', grid.pushWindowNextScreen)
+hs.hotkey.bind(hyper, 'P', grid.pushWindowPrevScreen)
+
+hs.hotkey.bind(hyper, 'J', grid.pushWindowDown)
+hs.hotkey.bind(hyper, 'K', grid.pushWindowUp)
+hs.hotkey.bind(hyper, 'H', grid.pushWindowLeft)
+hs.hotkey.bind(hyper, 'L', grid.pushWindowRight)
+
+hs.hotkey.bind(hyper, 'U', grid.resizeWindowTaller)
+hs.hotkey.bind(hyper, 'O', grid.resizeWindowWider)
+hs.hotkey.bind(hyper, 'I', grid.resizeWindowThinner)
+hs.hotkey.bind(hyper, 'Y', grid.resizeWindowShorter)
