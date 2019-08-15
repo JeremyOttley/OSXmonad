@@ -105,7 +105,7 @@ local function center(window)
   window:setFrame(frame)
 end
 
-hotkey.bind(hyper, "f", function() tiling.toggleFloat(center) end)
+hotkey.bind(hyper, "t", function() tiling.toggleFloat(center) end)
 -- If you want to set the layouts that are enabled
 tiling.set('layouts', {
   'main-vertical', 'fullscreen'
