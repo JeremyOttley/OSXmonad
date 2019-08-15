@@ -17,7 +17,8 @@ hs.alert.show("Config loaded 👍", 3)
 modkey = {"cmd","alt"}
 
 -- {'⌘', '⌥', 'ctrl'}
-hyper = {'ctrl', 'alt', 'cmd'}
+--hyper = {'ctrl', 'alt', 'cmd'}
+hyper = {'cmd', 'ctrl', 'alt', 'shift'}
 
 --{'⌘', '⌥', '⇧', 'ctrl'}
 hyperShift = {'ctrl', 'shift'}
