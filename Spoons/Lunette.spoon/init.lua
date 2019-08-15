@@ -41,10 +41,10 @@ DefaultMapping = {
     {{"ctrl", "cmd"}, "Right"},
   },
   bottomLeft = {
-    {{"ctrl", "cmd", "shift"}, "Left"},
+    {{"ctrl", "alt", "cmd"}, "Left"},
   },
   bottomRight = {
-    {{"ctrl", "cmd", "shift"}, "Right"},
+    {{"ctrl", "alt", "cmd"}, "Right"},
   },
   fullScreen = {
     {{"cmd", "alt"}, "F"},

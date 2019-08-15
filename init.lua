@@ -116,7 +116,7 @@ tiling.set('layouts', {
 hs.window.animationDuration = 0
 
 -- Remove window shadows
-hs.window.setShadows(true)
+hs.window.setShadows(false)
 
 hs.loadSpoon("Lunette")
 spoon.Lunette:bindHotkeys()
