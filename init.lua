@@ -21,7 +21,8 @@ modkey = {"cmd","alt"}
 hyper = {'cmd', 'ctrl', 'alt', 'shift'}
 
 --{'⌘', '⌥', '⇧', 'ctrl'}
-hyperShift = {'ctrl', 'shift'}
+--hyperShift = {'ctrl', 'shift'}
+hyperW = {hyper, 'W'}
 
 --
 -- [[ Functions ]] --
@@ -88,10 +89,10 @@ local tiling = require "hs.tiling"
 local hotkey = require "hs.hotkey"
 
 -- find a way to replace cycleLayout with "space" instead of "c"
-hotkey.bind(modkey, "c", function() tiling.cycleLayout() end)
-hotkey.bind(modkey, "j", function() tiling.cycle(1) end)
-hotkey.bind(modkey, "k", function() tiling.cycle(-1) end)
-hotkey.bind(modkey, "space", function() tiling.promote() end)
+hotkey.bind(hyper, "c", function() tiling.cycleLayout() end)
+hotkey.bind(hyper, "j", function() tiling.cycle(1) end)
+hotkey.bind(hyper, "k", function() tiling.cycle(-1) end)
+hotkey.bind(hyper, "space", function() tiling.promote() end)
 --hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
 
 -- Push the window into the exact center of the screen
@@ -104,7 +105,7 @@ local function center(window)
   window:setFrame(frame)
 end
 
-hotkey.bind(modkey, "f", function() tiling.toggleFloat(center) end)
+hotkey.bind(hyper, "f", function() tiling.toggleFloat(center) end)
 -- If you want to set the layouts that are enabled
 tiling.set('layouts', {
   'main-vertical', 'fullscreen'
@@ -140,8 +141,8 @@ hs.hotkey.bind(hyper, 'M', grid.maximizeWindow)
 hs.hotkey.bind(hyper, 'N', grid.pushWindowNextScreen)
 hs.hotkey.bind(hyper, 'P', grid.pushWindowPrevScreen)
 
-hs.hotkey.bind(hyper, 'J', grid.pushWindowDown)
-hs.hotkey.bind(hyper, 'K', grid.pushWindowUp)
+--hs.hotkey.bind(hyper, 'J', grid.pushWindowDown)
+--hs.hotkey.bind(hyper, 'K', grid.pushWindowUp)
 hs.hotkey.bind(hyper, 'H', grid.pushWindowLeft)
 hs.hotkey.bind(hyper, 'L', grid.pushWindowRight)
 
