@@ -90,12 +90,23 @@ local hotkey = require "hs.hotkey"
 hotkey.bind(modkey, "c", function() tiling.cycleLayout() end)
 hotkey.bind(modkey, "j", function() tiling.cycle(1) end)
 hotkey.bind(modkey, "k", function() tiling.cycle(-1) end)
---hotkey.bind(modkey, "space", function() tiling.promote() end)
-hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
+hotkey.bind(modkey, "space", function() tiling.promote() end)
+--hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
 
+-- Push the window into the exact center of the screen
+local function center(window)
+  frame = window:screen():frame()
+  frame.x = (frame.w / 2) - (frame.w / 4)
+  frame.y = (frame.h / 2) - (frame.h / 4)
+  frame.w = frame.w / 2
+  frame.h = frame.h / 2
+  window:setFrame(frame)
+end
+
+hotkey.bind(modkey, "f", function() tiling.toggleFloat(center) end)
 -- If you want to set the layouts that are enabled
 tiling.set('layouts', {
-  'fullscreen', 'main-vertical'
+  'main-vertical', 'fullscreen'
 })
 --
 -- [[ Windows ]] --
@@ -123,7 +134,7 @@ grid.MARGINY    = 0
 -- [[ Commands ]] --
 --
 
---hs.hotkey.bind(hyper, 'M', grid.maximizeWindow)
+hs.hotkey.bind(hyper, 'M', grid.maximizeWindow)
 
 hs.hotkey.bind(hyper, 'N', grid.pushWindowNextScreen)
 hs.hotkey.bind(hyper, 'P', grid.pushWindowPrevScreen)
@@ -137,4 +148,3 @@ hs.hotkey.bind(hyper, 'U', grid.resizeWindowTaller)
 hs.hotkey.bind(hyper, 'O', grid.resizeWindowWider)
 hs.hotkey.bind(hyper, 'I', grid.resizeWindowThinner)
 hs.hotkey.bind(hyper, 'Y', grid.resizeWindowShorter)
-
