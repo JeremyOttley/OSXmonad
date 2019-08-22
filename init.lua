@@ -136,7 +136,7 @@ grid.MARGINY    = 0
 -- [[ Commands ]] --
 --
 
-hs.hotkey.bind(hyper, 'M', grid.maximizeWindow)
+hs.hotkey.bind(hyper, 'F', grid.maximizeWindow)
 
 hs.hotkey.bind(hyper, 'N', grid.pushWindowNextScreen)
 hs.hotkey.bind(hyper, 'P', grid.pushWindowPrevScreen)
