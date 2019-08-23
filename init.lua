@@ -93,7 +93,7 @@ hotkey.bind(hyper, "c", function() tiling.cycleLayout() end)
 hotkey.bind(hyper, "j", function() tiling.cycle(1) end)
 hotkey.bind(hyper, "k", function() tiling.cycle(-1) end)
 hotkey.bind(hyper, "space", function() tiling.promote() end)
---hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
+hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
 
 -- Push the window into the exact center of the screen
 local function center(window)
@@ -136,7 +136,7 @@ grid.MARGINY    = 0
 -- [[ Commands ]] --
 --
 
-hs.hotkey.bind(hyper, 'F', grid.maximizeWindow)
+--hs.hotkey.bind(hyper, 'F', grid.maximizeWindow)
 
 hs.hotkey.bind(hyper, 'N', grid.pushWindowNextScreen)
 hs.hotkey.bind(hyper, 'P', grid.pushWindowPrevScreen)
