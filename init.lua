@@ -93,7 +93,7 @@ hotkey.bind(hyper, "c", function() tiling.cycleLayout() end)
 hotkey.bind(hyper, "j", function() tiling.cycle(1) end)
 hotkey.bind(hyper, "k", function() tiling.cycle(-1) end)
 hotkey.bind(hyper, "space", function() tiling.promote() end)
-hotkey.bind(modkey, "f", function() tiling.goToLayout("fullscreen") end)
+hotkey.bind(hyper, "f", function() tiling.goToLayout("fullscreen") end)
 
 -- Push the window into the exact center of the screen
 local function center(window)
