@@ -2,6 +2,7 @@
 
 Hammerspoon set up to imitate Xmonad
 
+```
 _guiInput_() {
   # DESC:   Ask for user input using a Mac dialog box
   # ARGS:   $1 (Optional) - Text in dialogue box (Default: Password)
@@ -24,3 +25,4 @@ EOF
   fi
 
 }
+```
